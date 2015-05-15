@@ -1,6 +1,4 @@
 <?php
-
-
 $email = $_POST['inputEmail'];
 $name = $_POST['inputName'];
 $msg = $_POST['textMsg'];
@@ -19,7 +17,6 @@ if($send){
 	$response->result = false;
 	$response->msg = 'A mensagem não pode ser enviada';
 }
-
 echo json_encode($response);
-	
+die;
 ?>
