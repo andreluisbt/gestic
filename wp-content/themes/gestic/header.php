@@ -28,7 +28,7 @@
 		<div id="wrapPage" class="container">
 			
 			<header>
-				<img src="imgs/logo.png" />
+				<img src="<?php bloginfo('template_url'); ?>/imgs/logo.png" />
 				<nav>
 					<ul>
 						<li>
@@ -52,5 +52,5 @@
 			</header>
 			
             <section id="banner">
-            	<img src="imgs/banner.png" class="img-responsive" />
+            	<img src="<?php bloginfo('template_url'); ?>/imgs/banner.png" class="img-responsive" />
             </section>

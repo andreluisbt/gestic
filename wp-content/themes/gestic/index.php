@@ -2,7 +2,6 @@
 	require_once 'security.php';
     get_header(); 
 ?>
-
 			<section id="whoWeAre">
 				<h1>QUEM SOMOS</h1>
 				<p>
@@ -46,7 +45,7 @@
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="lab1">
 							<div class="col-md-4 text-center">
-								<img src="imgs/lab1.png" />
+								<img src="<?php bloginfo('template_url'); ?>/imgs/lab1.png" />
 							</div>
 							<div class="col-md-8 text-justify">
 								<h2>
@@ -65,7 +64,7 @@
 						</div>
 						<div role="tabpanel" class="tab-pane" id="lab2">
 							<div class="col-md-4 text-center">
-								<img src="imgs/lab1.png" />
+								<img src="<?php bloginfo('template_url'); ?>/imgs/lab1.png" />
 							</div>
 							<div class="col-md-8 text-justify">
 								<h2>
@@ -84,7 +83,7 @@
 						</div>
 						<div role="tabpanel" class="tab-pane" id="lab3">
 							<div class="col-md-4 text-center">
-								<img src="imgs/lab1.png" />
+								<img src="<?php bloginfo('template_url'); ?>/imgs/lab1.png" />
 							</div>
 							<div class="col-md-8 text-justify">
 								<h2>
@@ -103,7 +102,7 @@
 						</div>
 						<div role="tabpanel" class="tab-pane" id="lab4">
 							<div class="col-md-4 text-center">
-								<img src="imgs/lab1.png" />
+								<img src="<?php bloginfo('template_url'); ?>/imgs/lab1.png" />
 							</div>
 							<div class="col-md-8 text-justify">
 								<h2>
