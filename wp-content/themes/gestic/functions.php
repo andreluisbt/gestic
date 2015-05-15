@@ -17,6 +17,8 @@ function gestic_init(){
 	
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/lib/font-awesome-4.3.0/css/font-awesome.min.css', array(), null, false );
 	
+	wp_enqueue_script('jquery-mask', get_template_directory_uri() . '/lib/jquery-form/jquery.form.min.js', array(), null, false );
+	
 	//wp_enqueue_script('jquery-mask', get_template_directory_uri() . '/lib/jquery-mask/dist/jquery.mask.min.js', array(), null, false );
 	
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array(), null, false );

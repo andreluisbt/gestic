@@ -6,6 +6,41 @@
 @border-radius-large: 0;
 @border-radius-small: 0;
 
+.preload{
+  text-align: center;
+  .bar{
+    width: 6px;
+    height: 8px;
+    background-color: #232D33;
+    display: inline-block;
+    -webkit-animation: preload 0.8s linear infinite;
+    margin-left: 1px;
+    margin-right: 1px;
+    
+    &.bar-2{
+      -webkit-animation-delay: 0.266s;
+    }
+    &.bar-3{
+      -webkit-animation-delay: 0.532s;
+    }
+  }
+  @-webkit-keyframes preload{
+    0%{ -webkit-transform: scaleY(1);}
+    50%{ -webkit-transform: scaleY(3);}
+    100%{ -webkit-transform: scaleY(1);}
+  }
+  @-moz-keyframes preload{
+    0%{ -moz-transform: scaleY(1);}
+    50%{ -moz-transform: scaleY(3);}
+    100%{ -moz-transform: scaleY(1);}
+  }
+  @-ms-keyframes preload{
+    0%{ -ms-transform: scaleY(1);}
+    50%{ -ms-transform: scaleY(3);}
+    100%{ -ms-transform: scaleY(1);}
+  }
+}
+
 
 a{
 	color: #fff;
@@ -139,6 +174,23 @@ section#contact{
 		margin-bottom: 40px;
 	}
 	
+	.msgs{
+	 	padding: 0;
+		margin-bottom: 0;
+	 	div{
+	 		padding: 5px;
+	 		margin-bottom: 10px;
+	 		&.error{
+				background-color: @brand-danger;
+				color: #fff;
+			}
+			&.success{
+				background-color: @brand-success;
+				color: #fff;
+			}
+	 	}
+	}
+	
 	.control-label{
 		background-color: #C8CFD3;
 		float: left;
@@ -148,8 +200,8 @@ section#contact{
 	}
 	.form-control{
 		float: left;
-		&#name,
-		&#email{
+		&#inputName,
+		&#inputEmail{
 			width: 80%;
 			padding: 20px 10px;
 		}

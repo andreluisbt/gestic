@@ -50,17 +50,18 @@
 				<h1>Contato</h1>
 				
 				<div class="col-md-5">
-					<form class="form-horizontal">
+					<form class="form-horizontal" method="post" action="<?php bloginfo('template_url'); ?>/services/service-contact_form.php">
+						<div class="form-group msgs"></div>
 						<div class="form-group">
 							<label for="email" class="control-label">Email</label>
-							<input type="email" id="email" name="email" class="form-control" placeholder="Email">
+							<input type="email" required id="inputEmail" name="inputEmail" class="form-control" placeholder="Email">
 						</div>
 						<div class="form-group">
 							<label for="name" class="control-label">Nome</label>
-							<input type="email" id="name" name="name" class="form-control" placeholder="Nome">
+							<input type="text" required id="inputName" name="inputName" class="form-control" placeholder="Nome">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control col-md-12" rows="6"></textarea>
+							<textarea required id="textMsg" name="textMsg" class="form-control col-md-12" rows="6"></textarea>
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn pull-right">

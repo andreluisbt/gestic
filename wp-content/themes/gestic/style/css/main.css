@@ -6548,6 +6548,57 @@ button.close {
     display: none !important;
   }
 }
+.preload {
+  text-align: center;
+}
+.preload .bar {
+  width: 6px;
+  height: 8px;
+  background-color: #232D33;
+  display: inline-block;
+  -webkit-animation: preload 0.8s linear infinite;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.preload .bar.bar-2 {
+  -webkit-animation-delay: 0.266s;
+}
+.preload .bar.bar-3 {
+  -webkit-animation-delay: 0.532s;
+}
+@-webkit-keyframes preload {
+  0% {
+    -webkit-transform: scaleY(1);
+  }
+  50% {
+    -webkit-transform: scaleY(3);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+  }
+}
+@-moz-keyframes preload {
+  0% {
+    -moz-transform: scaleY(1);
+  }
+  50% {
+    -moz-transform: scaleY(3);
+  }
+  100% {
+    -moz-transform: scaleY(1);
+  }
+}
+@-ms-keyframes preload {
+  0% {
+    -ms-transform: scaleY(1);
+  }
+  50% {
+    -ms-transform: scaleY(3);
+  }
+  100% {
+    -ms-transform: scaleY(1);
+  }
+}
 a {
   color: #fff;
   transition: .3s;
@@ -6665,6 +6716,22 @@ section#contact {
 section#contact h1 {
   margin-bottom: 40px;
 }
+section#contact .msgs {
+  padding: 0;
+  margin-bottom: 0;
+}
+section#contact .msgs div {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+section#contact .msgs div.error {
+  background-color: #d9534f;
+  color: #fff;
+}
+section#contact .msgs div.success {
+  background-color: #5cb85c;
+  color: #fff;
+}
 section#contact .control-label {
   background-color: #C8CFD3;
   float: left;
@@ -6675,8 +6742,8 @@ section#contact .control-label {
 section#contact .form-control {
   float: left;
 }
-section#contact .form-control#name,
-section#contact .form-control#email {
+section#contact .form-control#inputName,
+section#contact .form-control#inputEmail {
   width: 80%;
   padding: 20px 10px;
 }
