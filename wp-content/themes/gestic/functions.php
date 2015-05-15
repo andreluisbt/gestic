@@ -2,7 +2,10 @@
 	require_once __DIR__ . '/security.php';
 	require_once __DIR__ . '/controllers/controller-index.php';
 
-add_action('init', 'gestic_init');
+if(!is_admin()){
+	add_action('init', 'gestic_init');
+	add_filter('style_loader_tag', 'gestic_proccess_less');
+}
 function gestic_init(){
 		
 	wp_deregister_script('jquery');
@@ -14,12 +17,12 @@ function gestic_init(){
 	
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/lib/font-awesome-4.3.0/css/font-awesome.min.css', array(), null, false );
 	
-	wp_enqueue_script('jquery-mask', get_template_directory_uri() . '/lib/jquery-mask/dist/jquery.mask.min.js', array(), null, false );
+	//wp_enqueue_script('jquery-mask', get_template_directory_uri() . '/lib/jquery-mask/dist/jquery.mask.min.js', array(), null, false );
 	
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array(), null, false );
 	wp_enqueue_style('main-less', get_template_directory_uri() . '/style/less/main.less', array(), null, false );
 	
-	wp_enqueue_script('less', get_template_directory_uri() . '/lib/less-2.5.0/less.min.js', array(), null);
+	//wp_enqueue_script('less', get_template_directory_uri() . '/lib/less-2.5.0/less.min.js', array(), null);
 		
 	remove_action('wp_head', 'print_emoji_detection_script', 7 );
 	remove_action('wp_head', 'print_emoji_styles' );
@@ -27,7 +30,6 @@ function gestic_init(){
 	
 }
 
-add_filter('style_loader_tag', 'gestic_proccess_less');
 function gestic_proccess_less($tag) {
     
     $lessDir = get_template_directory().'/style/less';
@@ -60,8 +62,9 @@ function gestic_proccess_less($tag) {
         if (file_exists($cacheFile)) {
             $cache = unserialize(file_get_contents($cacheFile));
         } else {
-            $cache = $lessDir.'/'.$cssFile;
-        }
+            //$cache = $lessDir.'/'.$cssFile;
+        	$cache = $lessDir.'/'.$lessFile;
+		}
     
         $less = new lessc;
         $newCache = $less->cachedCompile($cache);

@@ -3,123 +3,44 @@
     get_header(); 
 ?>
 			<section id="whoWeAre">
-				<h1>QUEM SOMOS</h1>
-				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-				</p>
-				<div class="col-md-6">
-					<div class="block">
-						<h2>Objetivo</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="block">
-						<h2>Missão</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-					</div>
-				</div>
+				<?php
+					$whoWeArePost = get_post(1);
+					$whoWeArePost->post_title;
+				?>
+				<h1><?php echo $whoWeArePost->post_title; ?></h1>
+				<?php echo $whoWeArePost->post_content; ?>
             </section>
            
 			<section id="labResearch">
+				<?php
+					$args = array('category'=>2, 'order'=>'ASC');
+                	$labResearchPosts = get_posts($args);
+				?>
 				<h1>LABORATÓRIOS E PESQUISA</h1>
 				<div role="tabpanel">
-
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs nav-justified" role="tablist">
-						<li role="presentation" class="active">
-							<a href="#lab1" role="tab" data-toggle="tab">Laboratório 1</a>
-						</li>
-						<li role="presentation">
-							<a href="#lab2" role="tab" data-toggle="tab">Laboratório 2</a>
-						</li>
-						<li role="presentation">
-							<a href="#lab3" role="tab" data-toggle="tab">Laboratório 3</a>
-						</li>
-						<li role="presentation">
-							<a href="#lab4" role="tab" data-toggle="tab">Laboratório 4</a>
-						</li>
+						<?php
+						$class = 'class="active"';
+						foreach($labResearchPosts as $post){
+							echo '<li role="presentation" '.$class.'>
+										<a href="#labResearch_tab'.$post->ID.'" role="tab" data-toggle="tab">'.$post->post_title.'</a>
+									</li>';
+							$class = '';
+						}
+						?>
 					</ul>
-
 					<!-- Tab panes -->
 					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="lab1">
-							<div class="col-md-4 text-center">
-								<img src="<?php bloginfo('template_url'); ?>/imgs/lab1.png" />
-							</div>
-							<div class="col-md-8 text-justify">
-								<h2>
-									Laboratório 1
-								</h2>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-								</p>
-								<h2>
-									Linha de pesquisa
-								</h2>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-								</p>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane" id="lab2">
-							<div class="col-md-4 text-center">
-								<img src="<?php bloginfo('template_url'); ?>/imgs/lab1.png" />
-							</div>
-							<div class="col-md-8 text-justify">
-								<h2>
-									Laboratório 2
-								</h2>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-								</p>
-								<h2>
-									Linha de pesquisa
-								</h2>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-								</p>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane" id="lab3">
-							<div class="col-md-4 text-center">
-								<img src="<?php bloginfo('template_url'); ?>/imgs/lab1.png" />
-							</div>
-							<div class="col-md-8 text-justify">
-								<h2>
-									Laboratório 3
-								</h2>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-								</p>
-								<h2>
-									Linha de pesquisa
-								</h2>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-								</p>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane" id="lab4">
-							<div class="col-md-4 text-center">
-								<img src="<?php bloginfo('template_url'); ?>/imgs/lab1.png" />
-							</div>
-							<div class="col-md-8 text-justify">
-								<h2>
-									Laboratório 4
-								</h2>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-								</p>
-								<h2>
-									Linha de pesquisa
-								</h2>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-								</p>
-							</div>
-						</div>
-						
+						<?php
+						$class = 'class="tab-pane active"';
+						foreach($labResearchPosts as $post){
+							echo '<div role="tabpanel" '.$class.' id="labResearch_tab'.$post->ID.'">
+										'.$post->post_content.'
+									</div>';
+							$class = 'class="tab-pane"';
+						}
+						?>
 					</div>
 				</div>
 				

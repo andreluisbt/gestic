@@ -6638,12 +6638,13 @@ section#labResearch h1 {
   margin-bottom: 30px;
 }
 section#labResearch .nav-tabs li a {
-  border-bottom: 2px solid #6A8C9B;
+  border: 2px solid transparent;
+  border-bottom-color: #6A8C9B;
 }
 section#labResearch .nav-tabs li a:hover,
 section#labResearch .nav-tabs li a:focus {
   background-color: #4D6773;
-  border: 2px solid #6A8C9B;
+  border-color: #6A8C9B;
 }
 section#labResearch .nav-tabs li.active a {
   background-color: #4D6773;
