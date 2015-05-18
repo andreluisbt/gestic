@@ -59,6 +59,7 @@ $("document").ready(function(){
 			
 			if (data.result) {
 				$msgs.html('<div class="success">' + data.msg + '</div>');
+				$form.clearForm();
 			} else {
 				$msgs.html('<div class="error">' + data.msg + '</div>');
 			}
