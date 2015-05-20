@@ -6,10 +6,10 @@ $msg = $_POST['textMsg'];
 $headers = "MIME-Version: 1.1\r\n";
 $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 $headers .= "From: ".$email."\r\n"; // remetente
-//$headers .= "Return-Path: ".$email."\r\n"; // return-path
+$headers .= "Return-Path: ".$email."\r\n"; // return-path
 $send = mail("andreluisbt@gmail.com", "[SITE GESTIC]", $msg, $headers);
 
-var_dump($send);
+//var_dump($send);
 
 $response = new stdClass();
 

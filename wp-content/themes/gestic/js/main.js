@@ -22,7 +22,8 @@ $("document").ready(function(){
 	
 	
 	$('#contact form').ajaxForm({
-		dataType : 'json',
+		type: 'post',
+		dataType : 'jsonp',
 		beforeSubmit : function(formData, form) {
 			$msgs = $(form).find('.msgs');
 			$msgs.html('').removeClass('error success');
