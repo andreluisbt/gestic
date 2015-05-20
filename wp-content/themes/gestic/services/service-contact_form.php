@@ -9,7 +9,11 @@ $headers .= "From: ".$email."\r\n"; // remetente
 //$headers .= "Return-Path: ".$email."\r\n"; // return-path
 $send = mail("andreluisbt@gmail.com", "[SITE GESTIC]", $msg, $headers);
 
+var_dump($send);
+
 $response = new stdClass();
+
+
 if($send){
 	$response->result = true;
 	$response->msg = 'Mensagem enviada com sucesso';
