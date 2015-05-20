@@ -1,4 +1,7 @@
 <?php
+
+header ('Access-Control-Allow-Origin: *')
+
 $email = $_POST['inputEmail'];
 $name = $_POST['inputName'];
 $msg = $_POST['textMsg'];
