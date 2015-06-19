@@ -1,6 +1,6 @@
 <?php
-	require_once __DIR__ . '/security.php';
-	require_once __DIR__ . '/controllers/controller-index.php';
+	require_once dirname(__FILE__) . '/security.php';
+	require_once dirname(__FILE__) . '/controllers/controller-index.php';
 
 if(!is_admin()){
 	add_action('init', 'gestic_init');
@@ -47,7 +47,7 @@ function gestic_proccess_less($tag) {
     $cssFile = null;
     
     if(preg_match("/id='.*-less-css'/", $tag)){
-        require_once __DIR__ . '/lib/less-php/lessc.inc.php';
+        require_once dirname(__FILE__) . '/lib/less-php/lessc.inc.php';
         
         $tag = preg_replace('/-less-css/', '-css', $tag);
         preg_match('/(http:\/\/[\w\.\/-]+)/', $tag, $urlMatches);
