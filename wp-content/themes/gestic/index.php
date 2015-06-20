@@ -46,6 +46,16 @@
 				
 			</section> 
            
+            <section id="partners">
+                <div class="container">
+                    <h1>PARCEIROS</h1>
+                    <?php
+                        $partnersPost = get_post(37);
+                        echo $partnersPost->post_content;
+                    ?>
+                <div class="container">
+            </section>
+           
 			<section id="contact">
 				<h1>Contato</h1>
 				

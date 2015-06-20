@@ -167,6 +167,41 @@ section#labResearch{
 	
 }
 
+section#partners{
+	background-color: #363E4B;
+	padding-bottom: 50px;
+	h1{
+		margin-bottom: 30px;
+		border-left: 5px solid #027E36;
+		line-height: 50px;
+		padding-left: 10px;
+		color: #fff;
+	}
+	ul{
+		text-align: center;
+		li{
+			display: inline-block;
+			a{
+				display: block;
+				padding: 15px;
+				img{
+					-webkit-filter: grayscale(100%);
+					filter: grayscale(100%);
+					transition: .3s;
+				}
+				&:hover,
+				&:focus{
+					img{
+						-webkit-filter: grayscale(0);
+						filter: grayscale(0);
+					}
+				}
+			}
+		}
+	}
+	
+}
+
 section#contact{
 	background-color: #f3f3f3;
 	overflow: hidden;

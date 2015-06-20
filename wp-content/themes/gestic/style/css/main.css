@@ -6710,6 +6710,37 @@ section#labResearch .tab-content {
   margin-right: -15px;
   padding-top: 15px;
 }
+section#partners {
+  background-color: #363E4B;
+  padding-bottom: 50px;
+}
+section#partners h1 {
+  margin-bottom: 30px;
+  border-left: 5px solid #027E36;
+  line-height: 50px;
+  padding-left: 10px;
+  color: #fff;
+}
+section#partners ul {
+  text-align: center;
+}
+section#partners ul li {
+  display: inline-block;
+}
+section#partners ul li a {
+  display: block;
+  padding: 15px;
+}
+section#partners ul li a img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: .3s;
+}
+section#partners ul li a:hover img,
+section#partners ul li a:focus img {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
 section#contact {
   background-color: #f3f3f3;
   overflow: hidden;
